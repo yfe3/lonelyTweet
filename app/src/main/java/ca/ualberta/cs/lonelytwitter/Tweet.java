@@ -2,6 +2,7 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by YFENG3 on 2017-09-13.
@@ -10,23 +11,27 @@ import java.util.Date;
 public abstract class Tweet implements Tweetable{
     private String message;
     private Date date;
-    private ArrayList<currentMood> moodList;
+    private List<currentMood> moodList;
     protected int i;
 
     private currentMood happy = new happyMood("happy");
     private currentMood sad = new sadMood("sad");
 
+    public void setMood(currentMood mood){ // a method to add mood to tweet
+        this.moodList.add(mood);
+    }
+    
     public Tweet(String message){
         date = new Date();
         this.message = message;
-        moodList.add(happy);
-        moodList.add(sad);
+
 
     }
 
     public Tweet(String message, Date date){
         this.date = date;
         this.message = message;
+
     }
 
     public String getMessage(){
