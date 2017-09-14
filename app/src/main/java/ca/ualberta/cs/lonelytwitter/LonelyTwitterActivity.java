@@ -12,6 +12,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -40,7 +41,22 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+
+				Tweet tweet = new importantTweet("");
+
+				Tweet tweet1 = new NormalTweet("hi");
+				try{
+				tweet.setMessage("hello2");
+				} catch (TweetTooLongException e){
+
+				}
+				Tweetable tweet3 = new importantTweet(" ");
+				ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+				tweetList.add(tweet);
+				tweetList.add(tweet1);
+// 				Log.d("","the isiprotant method on tweet return " + tweet.isImprotant());
+//				Log.d("","the isiprotant method on tweet1 return " + tweet1.isImprotant());
+				//finish();      // comment out
 
 			}
 		});
