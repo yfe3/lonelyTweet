@@ -1,5 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import android.provider.ContactsContract;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,15 +13,15 @@ import java.util.List;
 public abstract class Tweet implements Tweetable{
     private String message;
     private Date date;
-    private List<currentMood> moodList;
-    protected int i;
+//    private List<currentMood> moodList;
+    //protected int i;
 
-    private currentMood happy = new happyMood("happy");
-    private currentMood sad = new sadMood("sad");
+//    private currentMood happy = new happyMood("happy");
+//    private currentMood sad = new sadMood("sad");
 
-    public void setMood(currentMood mood){ // a method to add mood to tweet
-        this.moodList.add(mood);
-    }
+//    public void setMood(currentMood mood){ // a method to add mood to tweet
+//        this.moodList.add(mood);
+//    }
     
     public Tweet(String message){
         date = new Date();
@@ -50,4 +52,16 @@ public abstract class Tweet implements Tweetable{
         return date;
     }
     public abstract Boolean isImprotant();
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString(){
+        return date.toString() + "|" + message;
+    }
+
+//    public currentMood getHappy() {
+//        public String toString()+ "|" + message
+//    }
 }
