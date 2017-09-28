@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2017 Team X, CMPUT301, University of Alberta - All Rights Reserved.
+ * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta. You can find a copy of this license in this project. Otherwise please contact yfeng3@ualberta.ca.
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -26,6 +31,11 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * subclass LonelyTwitterActivity,
+ * serves as main function,
+ * create the tweet
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -35,8 +45,11 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 	
-	/** Called when the activity is first created. */
+
 	@Override
+	/**
+	 * Called when the activity is first created.
+	 */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -75,13 +88,6 @@ public class LonelyTwitterActivity extends Activity {
 
 				saveInFile();
 
-//				BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-//				String line = in.readLine();
-//				while (line != null) {
-//				tweets.add(line);
-//				line = in.readLine();}
-
-
 			}
 		});
 	}
@@ -108,29 +114,22 @@ public class LonelyTwitterActivity extends Activity {
 
 			tweets = gson.fromJson(in, listType);
 
-//			String line = in.readLine();
-//			while (line != null) {
-//				tweets.add(line);
-//				line = in.readLine();
-//			}
-
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-		//return tweets.toArray(new String[tweets.size()]);
 	}
-	
+
+    /**
+     * save tweets on disk.
+     */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
 					Context.MODE_PRIVATE);
-//			fos.write(new String(date.toString() + " | " + text)
-//					.getBytes());
 
 			OutputStreamWriter writer = new OutputStreamWriter(fos);
 			Gson gson = new Gson();
@@ -140,11 +139,9 @@ public class LonelyTwitterActivity extends Activity {
 			fos.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
 			throw new RuntimeException();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
 			throw new RuntimeException();
 		}
 	}

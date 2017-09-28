@@ -1,3 +1,9 @@
+
+/*
+ * Copyright (c) 2017 Team X, CMPUT301, University of Alberta - All Rights Reserved.
+ * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta. You can find a copy of this license in this project. Otherwise please contact yfeng3@ualberta.ca.
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import android.provider.ContactsContract;
@@ -6,22 +12,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by YFENG3 on 2017-09-13.
- */
 
+/**
+ * Represent a tweet
+ *
+ * @author: team X
+ * @version: 1.0
+ * @see: NormalTweet
+ * @see: ImportanTweet
+ * @since: 1.0
+ *
+ */
 public abstract class Tweet implements Tweetable{
+    /*
+     * the tweet object
+     */
     private String message;
     private Date date;
-//    private List<currentMood> moodList;
-    //protected int i;
 
-//    private currentMood happy = new happyMood("happy");
-//    private currentMood sad = new sadMood("sad");
-
-//    public void setMood(currentMood mood){ // a method to add mood to tweet
-//        this.moodList.add(mood);
-//    }
     
     public Tweet(String message){
         date = new Date();
@@ -30,16 +38,33 @@ public abstract class Tweet implements Tweetable{
 
     }
 
+    /**
+     * Constructs a Tweet object
+     *
+     * @param message tweet message
+     * @param date tweet date
+     */
     public Tweet(String message, Date date){
         this.date = date;
         this.message = message;
 
     }
 
+    /**
+     * return a tweet message
+     *
+     * @return
+     */
     public String getMessage(){
         return message;
     }
 
+    /**
+     * Sets the tweet message
+     *
+     * @param message
+     * @throws TweetTooLongException
+     */
     public void setMessage(String message) throws TweetTooLongException{
         if(message.length() < 140 ){
             this.message = message;
@@ -48,10 +73,28 @@ public abstract class Tweet implements Tweetable{
             throw new TweetTooLongException();
         }
     }
+
+    /**
+     * get the current date
+     *
+     * @return
+     */
     public Date getDate(){
         return date;
     }
+
+    /**
+     * check if a tweet is impotant
+     *
+     * @return
+     */
     public abstract Boolean isImprotant();
+
+    /**
+     * set the date of a tweet
+     *
+     * @param date
+     */
     public void setDate(Date date) {
         this.date = date;
     }
