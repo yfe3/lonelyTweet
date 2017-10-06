@@ -7,6 +7,11 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import com.robotium.solo.Solo;
 
 import junit.framework.TestCase;
 
@@ -15,7 +20,8 @@ import junit.framework.TestCase;
  *
  * a test for the tweet program, unmodified, from the original
  */
-public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 {
+public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<LonelyTwitterActivity> {
+
 
     /**
      * a method to start the test
@@ -24,6 +30,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
         super(ca.ualberta.cs.lonelytwitter.LonelyTwitterActivity.class);
     }
 
+<<<<<<< HEAD
     /**
      * exception handler
      *
@@ -31,6 +38,9 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
      */
     public void testStart() throws Exception {
         Activity activity = getActivity();
+=======
+>>>>>>> elasticsearch
 
-    }
+
+
 }
