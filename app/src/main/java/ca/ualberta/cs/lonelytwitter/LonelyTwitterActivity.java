@@ -131,7 +131,7 @@ public class LonelyTwitterActivity extends Activity {
 			tweets = gson.fromJson(in, listType);
 		}catch (FileNotFoundException e){
 
-		//loadFromFile(); // TODO replace this with elastic search
+		// TODO replace this with elastic search
 		ElasticsearchTweetController.GetTweetsTask getTweetsTask =
 				new ElasticsearchTweetController.GetTweetsTask();
 		getTweetsTask.execute("");}
