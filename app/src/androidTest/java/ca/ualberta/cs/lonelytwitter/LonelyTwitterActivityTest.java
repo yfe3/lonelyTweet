@@ -30,7 +30,7 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<
         super(ca.ualberta.cs.lonelytwitter.LonelyTwitterActivity.class);
     }
 
-<<<<<<< HEAD
+
     /**
      * exception handler
      *
@@ -38,8 +38,6 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<
      */
     public void testStart() throws Exception {
         Activity activity = getActivity();
-=======
->>>>>>> elasticsearch
 
 
 

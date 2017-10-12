@@ -13,92 +13,6 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * Represent a tweet
- *
- * @author: team X
- * @version: 1.0
- * @see: NormalTweet
- * @see: ImportanTweet
- * @since: 1.0
- *
- */
-public abstract class Tweet implements Tweetable{
-    /*
-     * the tweet object
-     */
-    private String message;
-    private Date date;
-
-    
-    public Tweet(String message){
-        date = new Date();
-        this.message = message;
-
-
-    }
-
-    /**
-     * Constructs a Tweet object
-     *
-     * @param message tweet message
-     * @param date tweet date
-     */
-    public Tweet(String message, Date date){
-        this.date = date;
-        this.message = message;
-
-    }
-
-    /**
-     * return a tweet message
-     *
-     * @return
-     */
-    public String getMessage(){
-        return message;
-    }
-
-    /**
-     * Sets the tweet message
-     *
-     * @param message
-     * @throws TweetTooLongException
-     */
-    public void setMessage(String message) throws TweetTooLongException{
-        if(message.length() < 140 ){
-            this.message = message;
-        }
-        else{
-            throw new TweetTooLongException();
-        }
-    }
-
-    /**
-     * get the current date
-     *
-     * @return
-     */
-    public Date getDate(){
-        return date;
-    }
-
-    /**
-     * check if a tweet is impotant
-     *
-     * @return
-     */
-    public abstract Boolean isImprotant();
-
-    /**
-     * set the date of a tweet
-     *
-     * @param date
-     */
-
-package ca.ualberta.cs.lonelytwitter;
-
-import java.util.Date;
 import io.searchbox.annotations.JestId;
 
 public abstract class Tweet implements Tweetable {
@@ -142,10 +56,6 @@ public abstract class Tweet implements Tweetable {
     }
 
 
-    @Override
-    public String toString(){
-        return date.toString() + "|" + message;
-    }
 
 //    public currentMood getHappy() {
 //        public String toString()+ "|" + message

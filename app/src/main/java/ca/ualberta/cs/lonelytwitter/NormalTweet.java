@@ -5,7 +5,6 @@
  */
 
 
->>>>>>> elasticsearch
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
@@ -14,13 +13,12 @@ import java.util.Date;
 /**
  * a normal tweet subclass
  */
-public class NormalTweet extends Tweet{
+
 
     /**
      * constructor of normal tweet with one parameter
      * @param message
      */
-
 public class NormalTweet extends Tweet {
 
 
@@ -40,16 +38,15 @@ public class NormalTweet extends Tweet {
         super(message, date);
     }
 
-    @Override
 
     /**
      * method that return False
      *
      * @return
      */
-    public Boolean isImprotant() {
 
-    public Boolean isImportant() {
+
+    public  Boolean isImportant() {
 
         return Boolean.FALSE;
     }
